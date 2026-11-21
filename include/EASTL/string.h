@@ -96,6 +96,7 @@
 #include <EASTL/algorithm.h>
 #include <EASTL/initializer_list.h>
 #include <EASTL/bonus/compressed_pair.h>
+#include "EABase/config/eacompilertraits.h"
 
 EA_DISABLE_ALL_VC_WARNINGS()
 #include <stddef.h>             // size_t, ptrdiff_t, etc.
@@ -124,6 +125,7 @@ EA_RESTORE_ALL_VC_WARNINGS()
 // 4702 - unreachable code
 EA_DISABLE_VC_WARNING(4530 4480 4571 4267 4702);
 
+EA_DISABLE_GCC_WARNING(-Wdeprecated-literal-operator)
 
 #if defined(EA_PRAGMA_ONCE_SUPPORTED)
 	#pragma once // Some compilers (e.g. VC++) benefit significantly from using this. We've measured 3-4% build speed improvements in apps as a result.
@@ -4139,5 +4141,6 @@ namespace eastl
 
 EA_RESTORE_VC_WARNING();
 
+EA_RESTORE_GCC_WARNING()
 
 #endif // Header include guard

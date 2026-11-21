@@ -30,6 +30,8 @@
 
 EA_DISABLE_VC_WARNING(4814)
 
+EA_DISABLE_GCC_WARNING(-Wdeprecated-literal-operator)
+
 namespace eastl
 {
 	template <typename T>
@@ -716,4 +718,6 @@ namespace eastl
 } // namespace eastl
 
 EA_RESTORE_VC_WARNING()
+EA_RESTORE_GCC_WARNING()
+
 #endif // EASTL_STRING_VIEW_H
